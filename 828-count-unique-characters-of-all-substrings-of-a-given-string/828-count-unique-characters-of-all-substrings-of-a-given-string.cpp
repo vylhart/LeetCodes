@@ -10,7 +10,6 @@ public:
             for(int i=0; i<=n; i++){
                 if(i==n && prev!=-1){
                     ans+= (n-prev)*(prev-prevprev);
-                    //cout<<n-prev;
                 }
                 else if(prev!=-1 && s[i]==c){
                     ans+= (i-prev)*(prev-prevprev);
@@ -21,7 +20,6 @@ public:
                     prevprev = prev;
                     prev = i;
                 }
-                //cout<<ans<<endl;
             }
         }
         return ans;
