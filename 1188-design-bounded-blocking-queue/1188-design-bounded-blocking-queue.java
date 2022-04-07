@@ -9,15 +9,20 @@ class BoundedBlockingQueue {
     
     public void enqueue(int element) throws InterruptedException {
         full.acquire();
-        q.add(element);
+        synchronized(this){
+            q.add(element);
+        }
         empty.release(1);
 
     }
     
     public int dequeue() throws InterruptedException {
         empty.acquire();
-        int x = q.remove();
-        full.release();
+        int x = -1;
+        synchronized(this){
+            x = q.remove();
+            full.release();    
+        }
         return x;
     }
     
