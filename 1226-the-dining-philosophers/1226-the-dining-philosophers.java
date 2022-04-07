@@ -21,7 +21,7 @@ class DiningPhilosophers {
                 eat.run();
                 putRightFork.run();
                 putLeftFork.run();
-                i=(i+1)%5;
+                i=(i+2)%5;
                 this.notifyAll();
             }
         }
