@@ -1,4 +1,4 @@
-#define MAX 256
+#define MAX 156
 class Solution {
 public:
     
