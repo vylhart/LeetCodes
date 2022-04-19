@@ -9,8 +9,10 @@ public:
         return 1;
     }
     
-    
     string minWindow(string s, string t) {
+        if (s.length() == 0 || t.length() == 0) {
+          return "";
+        }
         vector<int> freq1(MAX, 0), freq2(MAX, 0);
         for(char c: t){
             freq1[c]++;
@@ -19,15 +21,12 @@ public:
         int n = s.length();
         int i=0,j=0,ans = n,start=0, end=0;
         while(i<=n){
-            
             while(j<i && check(freq1, freq2)){
-                //cout<<i<<" "<<j<<" "<<ans<<endl;
                 if( ans >= i-j ){
                     ans = i-j;
                     start = j;
                     end   = i;
                 }
-                
                 freq2[s[j]]--;
                 j++;
             }
