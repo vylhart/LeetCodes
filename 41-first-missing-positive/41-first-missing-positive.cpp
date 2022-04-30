@@ -9,19 +9,17 @@ public:
         unordered_map<int, int> map;
         int ans=0, m=nums[0];
         for(int i:nums){
-            if(i<=0)    continue;
             map[i]++;
             ans = max(ans,i+1);
             m = min(i, m);
         }
         if(m>1) return 1;
-        if(ans<=0)  return 1;
+
         for(int i:nums){
-            if(i<=0)    continue;
             if(i-1>0 && !map[i-1] && ans>i-1){
                 ans = i-1;
             }
-            if(i+1>0 && !map[i+1] && ans>i+1){
+            if(!map[i+1] && ans>i+1){
                 ans = i+1;
             }
         }
