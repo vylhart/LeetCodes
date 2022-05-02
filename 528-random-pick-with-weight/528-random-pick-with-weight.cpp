@@ -7,7 +7,6 @@ public:
         for(int i:w){
             sum+=i;
             v.push_back(sum);
-            cout<<sum<<"*";
         }
         cout<<sum<<endl;
     }
@@ -15,7 +14,6 @@ public:
     int pickIndex() {
         int x = rand()%sum;
         int i = upper_bound(v.begin(), v.end(), x) - v.begin();
-        cout<<x<<i<<endl;
         return i;
     }
 };
