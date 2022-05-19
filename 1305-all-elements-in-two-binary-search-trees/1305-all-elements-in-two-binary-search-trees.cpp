@@ -23,30 +23,19 @@ public:
                 s2.push(root2);
                 root2 = root2->left;
             }
-            if(!s1.empty() && !s2.empty()){
-                if(s1.top()->val < s2.top()->val){
-                    root1 = s1.top();
-                    s1.pop();
-                    v.push_back(root1->val);
-                    root1 = root1->right;
-                }
-                else{
-                    root2 = s2.top();
-                    s2.pop();
-                    v.push_back(root2->val);
-                    root2 = root2->right;
-                }
-            }
-            else if(!s1.empty()){
-                root1 = s1.top();s1.pop();
+            if(!s1.empty() && ( s2.empty() || s1.top()->val < s2.top()->val)){
+                root1 = s1.top();
+                s1.pop();
                 v.push_back(root1->val);
                 root1 = root1->right;
             }
             else{
-                root2 = s2.top();s2.pop();
+                root2 = s2.top();
+                s2.pop();
                 v.push_back(root2->val);
                 root2 = root2->right;
             }
+
         }
         return v;
     }
