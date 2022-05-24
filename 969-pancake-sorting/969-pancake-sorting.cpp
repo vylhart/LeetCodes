@@ -7,6 +7,10 @@ public:
         auto end = arr.end();
         for(int i: copy){
             auto j = find(arr.begin(), arr.end(), i);
+            if(j+1==end){
+                end--;
+                continue;
+            }
             ans.push_back(j+1-arr.begin());
             reverse(arr.begin(), j+1);
             ans.push_back(end-arr.begin());
