@@ -8,7 +8,8 @@ public:
         }
         vector<int> ans;
         for(int i=0; i<c; i++){
-            ans.push_back(s++);
+            ans.push_back(s);
+            s++;
         }
         return ans;
     }
