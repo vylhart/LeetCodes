@@ -3,7 +3,7 @@ public:
 
     vector<int> countRectangles(vector<vector<int>>& r, vector<vector<int>>& p) {
         vector<vector<int>> xcord(101);
-        for(auto i: r){
+        for(auto &i: r){
             xcord[i[1]].push_back(i[0]); 
         }
         for(int i=0; i<=100; i++){
@@ -11,7 +11,7 @@ public:
         }
         
         vector<int> ans;
-        for(auto i: p){
+        for(auto &i: p){
             int count = 0;
             for(int ycord=i[1]; ycord<=100; ycord++){
                 if(xcord[ycord].size()==0)  continue;
