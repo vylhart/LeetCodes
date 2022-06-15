@@ -8,17 +8,12 @@ public:
         sort(e.begin(), e.end(), compare);
         vector<int> lis;
         for(auto &i: e){
-            cout<<i[0]<<" "<<i[1]<<endl;
-            int n = lis.size();
-            if(n==0 || (lis[n-1] < i[1]))   lis.push_back(i[1]);
+            auto it = lower_bound(begin(lis), end(lis), i[1]);
+            if(it==lis.end())   lis.push_back(i[1]);
             else{
-                int j = lower_bound(begin(lis), end(lis), i[1]) - begin(lis);
-                //cout<<j<<" "<<i[1]<<endl;
-                if(j!=n)
-                lis[j] = i[1];
+                *it = i[1];
             }
         }
-        cout<<endl;
         return lis.size();
     }
 };
