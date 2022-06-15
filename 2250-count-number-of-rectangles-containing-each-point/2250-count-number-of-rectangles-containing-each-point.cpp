@@ -15,8 +15,6 @@ public:
             int count = 0;
             for(int ycord=i[1]; ycord<=100; ycord++){
                 if(xcord[ycord].size()==0)  continue;
-                //cout<<ycord;
-                
                 int j = lower_bound(xcord[ycord].begin(), xcord[ycord].end(), i[0]) - xcord[ycord].begin();
                 count+= xcord[ycord].size() - j;
             }
