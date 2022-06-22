@@ -9,7 +9,7 @@ public:
         }
         
         for(int i=1; i<=n; i++){
-            for(auto j: map[i]){
+            for(auto &j: map[i]){
                 dp[i] = max(dp[i], dp[j.first]+j.second);        
             }
             dp[i] = max(dp[i], dp[i-1]);
