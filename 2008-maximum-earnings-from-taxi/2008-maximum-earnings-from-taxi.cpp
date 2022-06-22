@@ -9,6 +9,7 @@ public:
         }
         
         for(int i=1; i<=n; i++){
+            if(map.find(i)!=map.end())
             for(auto &j: map[i]){
                 dp[i] = max(dp[i], dp[j.first]+j.second);        
             }
