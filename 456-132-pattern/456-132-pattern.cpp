@@ -13,7 +13,7 @@ public:
             while(!s.empty() && s.top()<=minv[i]){
                 s.pop();
             }
-            if(!s.empty() && s.top()>minv[i] && s.top()<nums[i]){
+            if(!s.empty() && s.top()<nums[i]){
                 return 1;
             }
             if(s.empty() || s.top()>nums[i])
