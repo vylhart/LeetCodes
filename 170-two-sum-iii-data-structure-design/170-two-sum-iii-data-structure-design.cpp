@@ -1,13 +1,13 @@
 class TwoSum {
     unordered_map<long, int> map;
-    set<int> v;
+    vector<int> v;
 public:
     TwoSum() {
     }
     
     void add(int number) {
         map[number]++;
-        v.insert(number);
+        v.push_back(number);
     }
     
     bool find(int value) {
