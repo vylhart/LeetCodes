@@ -11,11 +11,12 @@ public:
     }
     
     bool find(int value) {
-        for(int i:v){
+        for(auto j:map){
+            long i = j.first;
             if(2*i==value){
                 if(map[i]>1)    return 1;
             }
-            else if(map[value-(long)i]>0){
+            else if(map.find(value-(long)i)!=map.end()){
                 return 1;
             }
         }
