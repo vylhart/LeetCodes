@@ -54,12 +54,17 @@ public:
     List *map[SIZE];
     
     MyHashMap() {
-        for(int i=0; i<SIZE; i++)   map[i] = new List();
+        for(int i=0; i<SIZE; i++)   map[i] = NULL;
+    }
+    
+    List* getList(int key){
+        int hash = getHash(key);
+        if(!map[hash])  map[hash] = new List();
+        return map[hash];
     }
     
     void put(int key, int value) {
-        int hash = getHash(key);
-        List *list = map[hash];
+        List *list = getList(key);
         Node *node = list->find(key);
         if(node){
             node->value = value;
@@ -70,16 +75,14 @@ public:
     }
     
     int get(int key) {
-        int hash = getHash(key);
-        List *list = map[hash];
+        List *list = getList(key);
         Node *node = list->find(key);
         if(!node) return -1;
         return node->value;
     }
     
     void remove(int key) {
-        int hash = getHash(key);
-        List *list = map[hash];
+        List *list = getList(key);
         Node *node = list->find(key);
         if(!node) return;
         list->remove(node);
