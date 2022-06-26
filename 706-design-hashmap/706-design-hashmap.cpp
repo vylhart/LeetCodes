@@ -1,8 +1,7 @@
-#define SIZE 10000 
+#define SIZE 1000
 class MyHashMap {
 public:
-    //int SIZE = 10000;
-    
+
     class Node{
         public:
         Node *prev, *next;
