@@ -1,18 +1,16 @@
 class TwoSum {
     unordered_map<long, int> map;
-    vector<int> v;
 public:
     TwoSum() {
     }
     
     void add(int number) {
         map[number]++;
-        v.push_back(number);
     }
     
     bool find(int value) {
-        for(auto j:map){
-            long i = j.first;
+        for(auto k:map){
+            long i = k.first;
             if(2*i==value){
                 if(map[i]>1)    return 1;
             }
