@@ -6,15 +6,9 @@ public:
     }
     
     bool shouldPrintMessage(int timestamp, string message) {
-        if(map.find(message)==map.end()){
+        if(map.find(message)==map.end() || map[message]+10<=timestamp){
             map[message] = timestamp;
             return 1;
-        }
-        else{
-            if(map[message]+10<=timestamp){
-                map[message] = timestamp;
-                return 1;
-            }
         }
         return 0;
     }
