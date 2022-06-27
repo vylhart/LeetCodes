@@ -15,7 +15,7 @@ public:
             MAX = max(MAX, count[nums[i]]);
         }
         int ans = nums.size();
-        cout<<MAX;
+        //cout<<MAX;
         for(auto i: count){
             if(i.second == MAX){
                 ans = min(ans, right[i.first]-left[i.first]+1);
