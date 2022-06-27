@@ -10,8 +10,7 @@ public:
         int ans=-1;
         for(int i=1; i<=n; i++){
             if(trusted[i]==n-1 && trusting[i]==0){
-                if(ans!=-1)  return -1; 
-                ans = i;
+                return i;
             }
         }
         return ans;
