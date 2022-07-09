@@ -1,9 +1,9 @@
 class Solution {
     vector<int> v;
 public:
-    int find(){
+    int find(int z){
         int giver = -1;
-        for(int i=0; i<12; i++){
+        for(int i=z; i<12; i++){
             if(v[i]!=0){
                 giver = i; break;
             }
@@ -13,11 +13,10 @@ public:
         int ans = 100;
         int money = v[giver];
         v[giver] = 0;
-        for(int i=0; i<12; i++){
+        for(int i=giver+1; i<12; i++){
             if(v[i]!=0 && v[i]*money<0){
                 v[i]+= money;
-                int x = find();
-                //cout<<giver<<" "<<money<<" "<<x<<" "<<i<<endl;
+                int x = find(z+1);
                 ans = min(ans, x);
                 v[i]-= money;
             }
@@ -33,7 +32,7 @@ public:
             v[i[0]] -= i[2];
             v[i[1]] += i[2];
         }
-        return find();
+        return find(0);
         
     }
 };
