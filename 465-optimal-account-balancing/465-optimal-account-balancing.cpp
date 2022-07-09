@@ -4,19 +4,17 @@ public:
     int find(){
         int giver = -1;
         for(int i=0; i<12; i++){
-            if(v[i]>0){
+            if(v[i]!=0){
                 giver = i; break;
             }
         }
-        if(giver==-1)   return 0;
-        
-        
+        if(giver==-1)   return 0;      
         
         int ans = 100;
         int money = v[giver];
         v[giver] = 0;
         for(int i=0; i<12; i++){
-            if(v[i]<0){
+            if(v[i]!=0 && v[i]*money<0){
                 v[i]+= money;
                 int x = find();
                 //cout<<giver<<" "<<money<<" "<<x<<" "<<i<<endl;
