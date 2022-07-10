@@ -4,7 +4,7 @@ public:
         unordered_map<int,int> map;
         for(int i:nums) map[i]+=i;
         vector<int> v;
-        for(auto i: map)    v.push_back(i.first);
+        for(auto &i: map)    v.push_back(i.first);
         int n = v.size();
         vector<int> dp(n, 0);
         sort(v.begin(), v.end());
