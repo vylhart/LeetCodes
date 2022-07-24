@@ -14,6 +14,7 @@ public:
         pair<int, string> p = enter[id];
         total[p.second][d]+= t-p.first;
         count[p.second][d]+= 1;
+        enter.erase(id);
     }
     
     double getAverageTime(string f, string d) {
