@@ -2,7 +2,7 @@ class BrowserHistory {
     stack<string> backStack, forwardStack;
     string current;
 public:
-    BrowserHistory(string &homepage) {
+    BrowserHistory(string homepage) {
         current = homepage;
     }
     
