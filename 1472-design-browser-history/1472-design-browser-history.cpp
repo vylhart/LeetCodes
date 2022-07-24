@@ -7,7 +7,7 @@ public:
     }
     
     void visit(string url) {
-        while(!forwardStack.empty()) forwardStack.pop();
+        forwardStack = stack<string>();
         backStack.push(current);
         current = url;
     }
