@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<vector<int>> highFive(vector<vector<int>>& items) {
         unordered_map<int, priority_queue<int>> map;
-        for(auto i: items){
+        for(auto &i: items){
             map[i[0]].push(-i[1]);
             if(map[i[0]].size()>5){
                 map[i[0]].pop();
