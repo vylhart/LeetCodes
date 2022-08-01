@@ -24,8 +24,8 @@ public:
     }
     
     TreeNode* inorderSuccessor(TreeNode* root, TreeNode* p) {      
-        TreeNode* ans = new TreeNode(INT_MAX);
+        TreeNode* ans = 0;
         find(root, p, ans);
-        return ans->val==INT_MAX? 0:ans;
+        return ans;
     }
 };
