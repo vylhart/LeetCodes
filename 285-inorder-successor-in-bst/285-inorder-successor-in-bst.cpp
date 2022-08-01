@@ -12,12 +12,10 @@ public:
     
     void find(TreeNode* root, TreeNode* p, TreeNode* &ans){
         if(!root)   return;
-        //cout<<root->val;
-        if(root->val > p->val && root->val < ans->val){
-            ans = root;
-        }
         if(root->val > p->val){
+            ans = root;
             find(root->left, p, ans);
+            return;
         }
         else{
             find(root->right, p, ans);
