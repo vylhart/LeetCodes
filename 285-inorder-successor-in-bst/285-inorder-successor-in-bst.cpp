@@ -20,7 +20,6 @@ public:
         else{
             find(root->right, p, ans);
         }
-        
     }
     
     TreeNode* inorderSuccessor(TreeNode* root, TreeNode* p) {      
