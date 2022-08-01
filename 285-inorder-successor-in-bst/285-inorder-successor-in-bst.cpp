@@ -8,23 +8,18 @@
  * };
  */
 class Solution {
+    TreeNode* ans = 0;
 public:
     
-    void find(TreeNode* root, TreeNode* p, TreeNode* &ans){
-        if(!root)   return;
+    TreeNode* inorderSuccessor(TreeNode* root, TreeNode* p) {      
+        if(!root)   return ans;
         if(root->val > p->val){
             ans = root;
-            find(root->left, p, ans);
-            return;
+            inorderSuccessor(root->left, p);
         }
         else{
-            find(root->right, p, ans);
+            inorderSuccessor(root->right, p);
         }
-    }
-    
-    TreeNode* inorderSuccessor(TreeNode* root, TreeNode* p) {      
-        TreeNode* ans = 0;
-        find(root, p, ans);
         return ans;
     }
 };
