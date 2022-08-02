@@ -8,10 +8,9 @@ public:
         }
         if(d.size()%2)  d.push_back(0);
         sort(d.begin(), d.end());
-        int x=0,y=0;
+        int x=0;
         for(int i=0; i<d.size(); i+=2){
             x = x*10+d[i]+d[i+1];
-            y = y*10+d[i+1];
         }
         return x;
     }
