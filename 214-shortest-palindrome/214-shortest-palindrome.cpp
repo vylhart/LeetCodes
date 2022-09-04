@@ -46,7 +46,6 @@ public:
         string tmp = "";
         for(int i=len; i<n; i++)    tmp += s[i];
         reverse(tmp.begin(), tmp.end());
-        cout<<len;
         return tmp+s;
     }
 };
