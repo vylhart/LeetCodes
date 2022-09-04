@@ -28,8 +28,8 @@ public:
     bool check(vector<int>& charge, long long budget, int k){
         vector<int> maxWin = maxWindow(charge, k);
         for(int i=0; i+k-1<n; i++){
-            long long max = maxWin[i];
-            long long sum = psum[i+k-1] - (i-1>=0 ? psum[i-1]: 0);
+            long max = maxWin[i];
+            long sum = psum[i+k-1] - (i-1>=0 ? psum[i-1]: 0);
             if(max+k*sum <= budget){
                 return 1;
             }
