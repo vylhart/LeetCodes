@@ -6,7 +6,7 @@ public:
         string ans = "";
         int i=0, j=0;
         while(i<n || j<m){
-            if(i<n && (j==m || word1[i]>word2[j] || word1.substr(i)>=word2.substr(j))){
+            if(i<n && (j==m || word1.compare(i, word1.size() - i, word2, j, word2.size() - j) > 0)){
                 ans += word1[i++];
             }
             else{
