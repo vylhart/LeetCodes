@@ -20,25 +20,22 @@ public:
         Res res;
         
         if(!root){
-            res.min = INT_MAX;
-            res.max = INT_MIN;
-            res.isBST = 0;
+            res.min = INT_MAX;res.max = INT_MIN;res.isBST = 0;
             return res;
         }
-        
         
         Res left =  find(root->left);
         Res right = find(root->right);
         
         res.min = min({root->val, left.min, right.min});
         res.max = max({root->val, left.max, right.max});
+        
+        
         if(left.isBST!=-1 && right.isBST!=-1 && left.max < root->val && root->val < right.min)
             res.isBST = left.isBST + right.isBST + 1; 
         else
             res.isBST = -1;
-        
         ans = max(ans, res.isBST);
-        //cout<<root->val<<" "<<res.isBST<<res.min<<res.max<<endl;
         return res;
     }
     
