@@ -25,15 +25,14 @@ public:
                     break;
             }
         }
-        int ans = sum;
         switch(sum%3){
             case 1:
-                ans -= min(b, c+cc);
+                sum -= min(b, c+cc);
                 break;
             case 2:
-                ans -= min(c, b+bb);
+                sum -= min(c, b+bb);
                 break;
         }
-        return ans;
+        return sum;
     }
 };
