@@ -2,7 +2,7 @@ class Solution {
 public:
     int minRefuelStops(int target, int startFuel, vector<vector<int>>& stations) {
         int n = stations.size();
-        vector<long long> dp(n+1, 0);
+        vector<long long> dp(n+1);
         dp[0] = startFuel;
         for(int i=0; i<n; i++){
             for(int t=i; t>=0; t--){
