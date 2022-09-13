@@ -8,19 +8,20 @@ public:
         i=0;j=0;
     }
     
-    int next() {
+    void move(){
         while(i<n && j==v[i].size()){
             i++;
             j=0;
         }
+    }
+    
+    int next() {
+        move();
         return v[i][j++];
     }
     
     bool hasNext() {
-        while(i<n && j==v[i].size()){
-            i++;
-            j=0;
-        }
+        move();
         return !(i==n);
     }
 };
