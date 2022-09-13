@@ -1,27 +1,23 @@
 class Vector2D {
-    int i,j,n;
-    vector<vector<int>> v;
+    int i,n;
+    vector<int> v;
 public:
     Vector2D(vector<vector<int>>& vec) {
-        n = vec.size();
-        v = vec;
-        i=0;j=0;
+        for(auto i: vec){
+            for(int j: i){
+                v.push_back(j);
+            }
+        }
+        n = v.size();
+        i=0;;
     }
     
-    void move(){
-        while(i<n && j==v[i].size()){
-            i++;
-            j=0;
-        }
-    }
     
     int next() {
-        move();
-        return v[i][j++];
+        return v[i++];
     }
     
     bool hasNext() {
-        move();
         return !(i==n);
     }
 };
