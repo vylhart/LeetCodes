@@ -22,7 +22,7 @@ class NestedIterator {
 public:
     
     void flatten(vector<NestedInteger> &ni) {
-        for(auto i: ni){
+        for(auto &i: ni){
             if(i.isInteger()){
                 v.push_back(i.getInteger());
             }
