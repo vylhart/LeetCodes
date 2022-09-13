@@ -3,7 +3,7 @@ class Vector2D {
     vector<int> v;
 public:
     Vector2D(vector<vector<int>>& vec) {
-        for(auto i: vec){
+        for(auto &i: vec){
             for(int j: i){
                 v.push_back(j);
             }
