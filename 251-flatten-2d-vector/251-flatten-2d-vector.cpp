@@ -13,9 +13,7 @@ public:
             i++;
             j=0;
         }
-        int x = v[i][j];
-        j++;
-        return x;
+        return v[i][j++];
     }
     
     bool hasNext() {
