@@ -32,7 +32,7 @@ public:
         }
     }
     
-    NestedIterator(vector<NestedInteger> ni) {
+    NestedIterator(vector<NestedInteger> &ni) {
         flatten(ni);
     }
     
