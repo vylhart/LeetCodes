@@ -1,29 +1,21 @@
 class MyCalendar {
-    set<int> s,e;
+    set<pair<int,int>> s;
 public:
     MyCalendar() {
-        
+        s.insert({INT_MAX, INT_MAX});
+        s.insert({INT_MIN, INT_MIN});
     }
     
-    int allendedhere(int time){
-        auto startedafterend = lower_bound(s.begin(), s.end(), time);
-        int cs = distance(startedafterend, s.end());
-        auto endedafterend = lower_bound(e.begin(), e.end(), time);
-        int ce = distance(endedafterend, e.end());
-        if(ce!=cs)  return -1;
-        return ce;
-    
-    }
     
     bool book(int start, int end) {
-        int a = allendedhere(end);
-        if(a==-1)   return 0;
-        int b = allendedhere(start);
-        if(a==b){
-            s.insert(start);
-            e.insert(end-1);
+        auto r = s.lower_bound({start, start});
+        auto l = r;
+        l--;
+        if(l->second <= start && end <= r->first){
+            s.insert({start, end});
+            return 1;
         }
-        return a==b;
+        return 0;
     }
 };
 
