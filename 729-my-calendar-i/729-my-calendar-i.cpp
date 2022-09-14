@@ -3,7 +3,7 @@ class MyCalendar {
 public:
     MyCalendar() {
         s.insert({INT_MAX, INT_MAX});
-        s.insert({INT_MIN, INT_MIN});
+        s.insert({-1, -1});
     }
     
     
