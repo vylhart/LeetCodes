@@ -6,7 +6,6 @@ public:
         sum=0;
     }
     
-
     void add(int left, int right) {
         auto it = interval.lower_bound(left);
         while(it!=interval.end() && it->second <= right){
