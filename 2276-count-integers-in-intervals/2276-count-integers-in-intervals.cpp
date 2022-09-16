@@ -21,14 +21,12 @@ public:
                 int tmp = it->first;
                 it++;
                 interval.erase(tmp);
-                //cout<<left<<" "<<right<<endl;
             }
-            else break;
+            else 
+                break;
         }
         interval[right] = left;
         sum += right-left+1;
-        
-        //cout<<sum<<endl;
     }
     
     int count() {
