@@ -14,7 +14,7 @@ public:
     void add(int left, int right) {
         auto it = interval.lower_bound(left);
         while(it!=interval.end()){
-            if(isOverlap(left, right, it->second, it->first)){
+            if(it->second <= right){
                 left = min(it->second, left);
                 right= max(it->first, right);
                 sum -= it->first - it->second+1;
