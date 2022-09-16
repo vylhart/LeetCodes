@@ -23,10 +23,3 @@ public:
         return sum;
     }
 };
-
-/**
- * Your CountIntervals object will be instantiated and called as such:
- * CountIntervals* obj = new CountIntervals();
- * obj->add(left,right);
- * int param_2 = obj->count();
- */ 
