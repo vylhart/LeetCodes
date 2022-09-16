@@ -18,8 +18,7 @@ public:
                 right= max(it->first, right);
                 sum -= it->first - it->second+1;
                 int tmp = it->first;
-                it++;
-                interval.erase(tmp);
+                interval.erase(it++);
             }
             else 
                 break;
