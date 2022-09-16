@@ -4,6 +4,7 @@ class CountIntervals {
 public:
     CountIntervals() {
         sum=0;
+        //interval[INT_MIN] = INT_MIN;
     }
     
     bool isOverlap(int l1, int r1, int l2, int r2){
@@ -17,7 +18,9 @@ public:
                 left = min(it->second, left);
                 right= max(it->first, right);
                 sum -= it->first - it->second+1;
-                interval.erase(it++);
+                int tmp = it->first;
+                it++;
+                interval.erase(tmp);
             }
             else 
                 break;
