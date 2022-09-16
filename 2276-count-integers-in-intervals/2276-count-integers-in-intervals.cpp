@@ -15,6 +15,7 @@ public:
                 sum -= it->first - it->second+1;
                 interval.erase(it++);
         }
+        
         interval[right] = left;
         sum += right-left+1;
     }
