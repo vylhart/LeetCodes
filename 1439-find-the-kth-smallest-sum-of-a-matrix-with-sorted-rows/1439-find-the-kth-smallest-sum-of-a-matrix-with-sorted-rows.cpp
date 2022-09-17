@@ -6,8 +6,8 @@ public:
         ans.push_back(0);
         
         
+        priority_queue<int> q;
         for(int i=0; i<n; i++){
-            priority_queue<int> q;
             for(int j=0; j<m; j++){
                 for(int k=0; k<ans.size(); k++){
                     q.push(mat[i][j] + ans[k]);
