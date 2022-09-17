@@ -27,7 +27,6 @@ public:
             ans = tmp;
             
         }
-        
         return ans[k-1];
     }
 };
