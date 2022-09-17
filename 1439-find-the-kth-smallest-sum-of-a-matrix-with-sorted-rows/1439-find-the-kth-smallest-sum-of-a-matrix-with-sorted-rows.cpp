@@ -10,7 +10,7 @@ public:
             int s = ans.size();
             
             priority_queue<pair<int,pair<int,int>>> q;
-            for(int i=0; i<m; i++){
+            for(int i=0; i<min(k,m); i++){
                 q.push({-(mat[j][i]+ans[0]), {i,0}});
             }
 
