@@ -15,7 +15,7 @@ public:
             }
         }
         int ans = INT_MAX;
-        for(auto i: map){
+        for(auto &i: map){
             if(i.second==n){
                 ans = min(ans, i.first);
             }
