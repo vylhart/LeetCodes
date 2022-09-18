@@ -31,8 +31,9 @@ public:
         find(0,0);
         vector<vector<string>> v;
         vector<string> tmp;
+        int prev;
         for(int x: ans){
-            int prev = 0;
+            prev = 0;
             for(int i=0; i<17; i++){
                 if(x&(1<<i)){
                     tmp.push_back(s.substr(prev, i-prev+1));
