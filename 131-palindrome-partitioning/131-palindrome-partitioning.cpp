@@ -34,7 +34,7 @@ public:
         int prev;
         for(int x: ans){
             prev = 0;
-            for(int i=0; i<17; i++){
+            for(int i=0; i<16; i++){
                 if(x&(1<<i)){
                     tmp.push_back(s.substr(prev, i-prev+1));
                     prev = i+1;
