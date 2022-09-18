@@ -4,7 +4,7 @@ public:
         long long ans = 0;
         int pos = 0;
         int neg = 0;
-        for(auto i: tr){
+        for(auto &i: tr){
             ans += max(0, i[0]-i[1]);
             if(i[0]>i[1]){
                 pos = max(pos, i[1]);
