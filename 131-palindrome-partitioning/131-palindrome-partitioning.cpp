@@ -2,6 +2,7 @@ class Solution {
     vector<vector<bool>> isPal;
     vector<int> ans;
     int n;
+    
 public:
     void find(int i, int x){
         if(i>=n){
@@ -24,11 +25,12 @@ public:
                 else                isPal[i][j] = s[i]==s[j] && isPal[i+1][j-1];
             }
         }
+        
         find(0,0);
         vector<vector<string>> v;
         vector<string> tmp;
         int prev;
-        for(int x: ans){
+        for(int &x: ans){
             prev = 0;
             for(int i=0; i<16; i++){
                 if(x&(1<<i)){
