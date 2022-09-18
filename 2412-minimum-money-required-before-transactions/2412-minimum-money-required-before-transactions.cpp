@@ -7,12 +7,12 @@ public:
         for(auto i: tr){
             ans += max(0, i[0]-i[1]);
             if(i[0]>i[1]){
-                pos = min(pos, -i[1]);
+                pos = max(pos, i[1]);
             }
             else{
                 neg = max(neg, i[0]);
             }
         }
-        return ans+max(-pos,neg);
+        return ans+max(pos,neg);
     }
 };
