@@ -20,12 +20,8 @@ public:
         isPal.resize(n,vector<bool>(n,0));
         for(int j=0; j<n; j++){
             for(int i=j; i>=0; i--){
-                if(i==j || i+1==j){
-                    isPal[i][j] = s[i]==s[j];
-                }
-                else{
-                    isPal[i][j] = s[i]==s[j] && isPal[i+1][j-1];
-                }
+                if(i==j || i+1==j)  isPal[i][j] = s[i]==s[j];
+                else                isPal[i][j] = s[i]==s[j] && isPal[i+1][j-1];
             }
         }
         find(0,0);
