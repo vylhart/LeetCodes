@@ -30,9 +30,9 @@ public:
         }
         find(0,0);
         vector<vector<string>> v;
+        vector<string> tmp;
         for(int x: ans){
             int prev = 0;
-            vector<string> tmp;
             for(int i=0; i<17; i++){
                 if(x&(1<<i)){
                     tmp.push_back(s.substr(prev, i-prev+1));
@@ -40,7 +40,7 @@ public:
                 }
             }
             v.push_back(tmp);
-            
+            tmp.clear();
         }
         return v;
     }
