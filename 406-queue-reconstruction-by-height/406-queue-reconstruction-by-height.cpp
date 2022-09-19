@@ -27,7 +27,7 @@ public:
         vector<vector<int>> ans(n);
         for(int i=1; i<=n; i++) update(i,1);
         int l,h,p,m,pos;
-        for(auto &x: people){
+        for(auto x: people){
             l=1; h=n;
             p=0;
             while(l<=h){
