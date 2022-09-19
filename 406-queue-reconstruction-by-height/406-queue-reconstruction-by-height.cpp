@@ -26,10 +26,10 @@ public:
         BIT.resize(n+1,0);
         vector<vector<int>> ans(n);
         for(int i=1; i<=n; i++) update(i,1);
-        
+        int l,h,p;
         for(auto &x: people){
-            int l=1, h=n;
-            int p=0;
+            l=1; h=n;
+            p=0;
             while(l<=h){
                 int m = (l+h)/2;
                 int pos = get(m-1);
