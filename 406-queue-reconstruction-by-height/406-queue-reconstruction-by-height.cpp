@@ -28,15 +28,12 @@ public:
         for(int i=1; i<=n; i++) update(i,1);
         
         for(auto &x: people){
-            int y = x[1];
             int l=1, h=n;
             int p=0;
-            //cout<<y<<endl;
             while(l<=h){
                 int m = (l+h)/2;
-                //cout<<m;
                 int pos = get(m-1);
-                if(pos<=y){
+                if(pos<=x[1]){
                     l = m+1;
                     p = m;
                 }
@@ -44,7 +41,6 @@ public:
                     h = m-1;
                 }
             }
-            //cout<<endl;
             ans[p-1]=x;
             update(p,-1);
         }
