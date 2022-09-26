@@ -1,7 +1,7 @@
 class Solution {
 public:
     int twoEggDrop(int n) {
-        vector<int> dp(n+1,0);
+        /*vector<int> dp(n+1,0);
         for(int i=1; i<=n; i++){
             dp[i] = i;
             for(int j=1; j<i; j++){
@@ -9,5 +9,11 @@ public:
             }
         }
         return dp[n];
+        */
+        int m = 1;
+        while(m*(m+1)<2*n){
+            m++;
+        }
+        return m;
     }
 };
