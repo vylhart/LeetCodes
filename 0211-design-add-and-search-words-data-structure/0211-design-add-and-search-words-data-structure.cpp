@@ -16,7 +16,7 @@ class WordDictionary {
     
     void addWord(string word) {
         Node* curr = root;
-        for(char c: word){
+        for(char &c: word){
             int x = c-'a';
             if(!curr->child[x]){
                 curr->child[x] = new Node();
