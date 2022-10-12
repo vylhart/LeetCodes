@@ -1,59 +1,50 @@
-class WordDictionary {
-    class Node{
-        public:
-        bool isLeaf;
-        Node* child[26];
-        Node(){
-            isLeaf = 0;
-            for(int i=0; i<26; i++) child[i]=0;
-        }
-    };
-    Node* root;    
-    public:
-    WordDictionary() {
-        root = new Node();
-    }
-    
-    void addWord(string word) {
-        Node* curr = root;
-        for(char c: word){
-            if(!curr->child[c-'a']){
-                curr->child[c-'a'] = new Node();
-            }
-            curr = curr->child[c-'a'];
-        }
-        curr->isLeaf = 1;
-    }
-    
-    bool search(string &word, int i, Node* curr){
-        if(!curr)   return 0;
-        if(i==word.length()){
-            return curr->isLeaf;
-        }
-        char c = word[i];
-        //cout<<c;
-        if(c=='.'){
-            for(int j=0; j<26; j++){
-                if(curr->child[j] && search(word, i+1, curr->child[j])){
-                    return 1;
-                }
-            }
-        }
-        else{
-            if(curr->child[c-'a'])
-            return search(word, i+1, curr->child[c-'a']);
-        }
-        return 0;
-    }
-    
-    bool search(string word) {
-        return search(word, 0, root);
+struct TrieNode{
+    bool isKey;
+    TrieNode* next[26];
+    TrieNode():isKey(false){
+        memset(next, NULL, sizeof(next));
     }
 };
 
-/**
- * Your WordDictionary object will be instantiated and called as such:
- * WordDictionary* obj = new WordDictionary();
- * obj->addWord(word);
- * bool param_2 = obj->search(word);
- */
+class WordDictionary {
+public:
+    WordDictionary() {
+        root = new TrieNode();
+    }
+    
+    void addWord(string word) {
+        TrieNode* node = root;
+        for(auto c: word){
+            if(!node->next[c - 'a']) node->next[c - 'a'] = new TrieNode();
+            node = node->next[c - 'a'];
+        }
+        node->isKey = true;
+    }
+    
+    bool search(string word) {
+        return helper(word, root);
+    }
+
+private:
+    TrieNode* root;
+    
+    bool helper(string word, TrieNode* node){
+        for(int i = 0; i < word.size(); i++){
+            char c = word[i];
+            if(c != '.'){
+                if(!node->next[c - 'a']) return false;
+                node = node->next[c - 'a'];
+            }
+            else{
+                bool found = false;
+                int j = 0;
+                for(; j < 26; j++){
+                    if(node->next[j]) found |= helper(word.substr(i + 1), node->next[j]);
+                    if(found) return true;
+                }
+                if(j == 26) return false;
+            }
+        }
+        return node->isKey;
+    }
+};
