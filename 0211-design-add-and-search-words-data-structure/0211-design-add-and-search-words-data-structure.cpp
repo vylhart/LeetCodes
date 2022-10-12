@@ -34,7 +34,7 @@ class WordDictionary {
         //cout<<c;
         if(c=='.'){
             for(int j=0; j<26; j++){
-                if(search(word, i+1, curr->child[j])){
+                if(curr->child[j] && search(word, i+1, curr->child[j])){
                     return 1;
                 }
             }
