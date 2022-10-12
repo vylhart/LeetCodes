@@ -16,12 +16,11 @@ class WordDictionary {
     
     void addWord(string word) {
         Node* curr = root;
-        for(char &c: word){
-            int x = c-'a';
-            if(!curr->child[x]){
-                curr->child[x] = new Node();
+        for(char c: word){
+            if(!curr->child[c-'a']){
+                curr->child[c-'a'] = new Node();
             }
-            curr = curr->child[x];
+            curr = curr->child[c-'a'];
         }
         curr->isLeaf = 1;
     }
