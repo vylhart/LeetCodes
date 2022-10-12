@@ -40,6 +40,7 @@ class WordDictionary {
             }
         }
         else{
+            if(curr->child[c-'a'])
             return search(word, i+1, curr->child[c-'a']);
         }
         return 0;
