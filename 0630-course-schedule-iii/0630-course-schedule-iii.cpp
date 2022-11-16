@@ -8,13 +8,11 @@ public:
     }
     int scheduleCourse(vector<vector<int>>& courses) {
         sort(courses.begin(), courses.end(), compare);
-        int count=0;
         int dur = 0;
         priority_queue<int> q;
         for(auto &i: courses){
             if(dur+i[0]<=i[1]){
                 dur+=i[0];
-                count++;
                 q.push(i[0]);
             }
             else if(!q.empty() && i[0]-q.top()<0){
@@ -23,6 +21,6 @@ public:
                 q.push(i[0]);
             }
         }
-        return count;
+        return q.size();
     }
 };
