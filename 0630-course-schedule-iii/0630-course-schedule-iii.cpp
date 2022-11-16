@@ -23,6 +23,6 @@ public:
                 q.push(i[0]);
             }
         }
-        return q.size();
+        return count;
     }
 };
