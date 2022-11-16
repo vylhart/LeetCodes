@@ -1,9 +1,6 @@
 class Solution {
 public:
     static bool compare(vector<int> &A, vector<int> &B){
-        if(A[1]==B[1]){
-            return A[0]<B[0];
-        }
         return A[1]<B[1];
     }
     int scheduleCourse(vector<vector<int>>& courses) {
