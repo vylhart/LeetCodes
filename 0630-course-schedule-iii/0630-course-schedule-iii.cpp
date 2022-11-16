@@ -17,7 +17,7 @@ public:
                 count++;
                 q.push(i[0]);
             }
-            else if(!q.empty() && i[0]-q.top()<=0){
+            else if(!q.empty() && i[0]-q.top()<0){
                 dur+=i[0]-q.top();
                 q.pop();
                 q.push(i[0]);
